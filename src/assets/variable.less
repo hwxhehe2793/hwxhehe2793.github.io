@@ -1,0 +1,102 @@
+@root-font-size: 16rem;
+
+// font
+
+@font-large-size: 20;
+@font-big-size: 18;
+@font-default-size: 16;
+@font-middle-size: 14;
+@font-small-size: 12;
+
+// border
+@border-color-dark: #666;
+@border-color-dark-light: #999;
+@border-color-gray: #ddd;
+@border-color-grayer: #d6d6d6;
+
+// color
+@blue: #33a8f2;
+@green: #2cae12;
+@orange: #ff6600;
+@gray-dark: #666;
+@gray: #999;
+@gray-light: #bbb;
+
+@bg: #eee;
+
+
+
+input{
+	outline: none;
+	appearance:button;
+   -moz-appearance:button; /* Firefox */
+   -webkit-appearance:button; /* Safari 和 Chrome */
+}
+
+
+
+
+.fixed-top{
+	top:0;
+	left:0;
+	width:100%;
+	position:absolute;
+	z-index:99;
+}
+.fixed-top-div{
+	height:2rem;
+}
+.fixed-bottom-div{
+	height:2rem;
+}
+
+
+
+/* 定义通用字体颜色 */
+
+.font-style-red{
+	color:red;
+}
+.font-style-orange{
+	color:orange;
+}
+.font-style-blue{
+	color:blue;
+}
+.font-style-green{
+	color:green;
+}
+
+// 
+.fixed(){
+
+	position: fixed;
+	// position: absolute;
+
+
+
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background: #fff;
+	overflow-y: auto;
+	z-index:99;
+}
+
+.more{
+	text-align:center;
+	padding-top:.2rem;
+	padding-bottom:.2rem;
+
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	font-size:.7rem;
+	img{
+		margin:0 .2rem;
+	}
+
+	
+
+}

@@ -1,0 +1,55 @@
+<template>
+    <div class="amap-page-container">
+      <el-amap vid="amap" :plugin="plugin" class="amap-demo" :center="center">
+      </el-amap>
+
+      <div class="toolbar">
+        <span v-if="loaded">
+          location: lng = {{ lng }} lat = {{ lat }}
+          {{result}}
+        </span>
+        <span v-else>正在定位</span>
+      </div>
+    </div>
+  </template>
+
+  <style>
+    .amap-demo {
+      height: 300px;
+    }
+  </style>
+
+  <script>
+    module.exports = {
+      data() {
+        let self = this;
+        return {
+          center: [121.59996, 31.197646],
+          lng: 0,
+          lat: 0,
+          result:null,
+          loaded: false,
+          plugin: [{
+            pName: 'Geolocation',
+            events: {
+              init(o) {
+                // o 是高德地图定位插件实例
+                o.getCurrentPosition((status, result) => {
+                	console.log(status)
+                	console.log(result)
+                	self.result = result
+                  if (result && result.position) {
+                    self.lng = result.position.lng;
+                    self.lat = result.position.lat;
+                    self.center = [self.lng, self.lat];
+                    self.loaded = true;
+                    self.$nextTick();
+                  }
+                });
+              }
+            }
+          }]
+        };
+      }
+    };
+</script>
