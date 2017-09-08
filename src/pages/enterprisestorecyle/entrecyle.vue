@@ -1,6 +1,8 @@
 <template>
 	<div class="ent-recyle">
-		<header-top title='企业回收'></header-top>
+		<header-top title='企业回收'>
+			<span class="homepage">首页</span>
+		</header-top>
 		<div class="entrecyle_image">
 			<img src="../../assets/imgs/entrecyle/major.png" />
 		</div>
@@ -55,7 +57,7 @@
 <script>
 	import headerTop from '@/components/header/header'
 
-	import { MessageBox } from 'mint-ui'
+	import { Toast } from 'mint-ui'
 
 	export default {
 		data() {
@@ -78,37 +80,32 @@
 		methods: {
 			verification() {
 				if(this.firmname == "") {
-					MessageBox({
-						title: '提示',
-						message: '企业名称未填写'
+					Toast({
+						message: '企业名称未填写',
 					})
-				}else if(this.userinfor == "") {
-					MessageBox({
-						title: '提示',
-						message: '联系人未填写'
+				} else if(this.userinfor == "") {
+					Toast({
+						message: '联系人未填写',
 					})
-				}else if(this.phonenumber == "") {
-					MessageBox({
-						title: '提示',
-						message: '联系电话未填写'
+				} else if(this.phonenumber == "") {
+					Toast({
+						message: '联系电话未填写',
 					})
-				}else if(this.address == "") {
-					MessageBox({
-						title: '提示',
-						message: '联系地址未定位'
+				} else if(this.address == "") {
+					Toast({
+						message: '联系地址未定位',
 					})
-				}else if(this.roomnumber == "") {
+				} else if(this.roomnumber == "") {
 					MessageBox({
 						title: '提示',
 						message: '门牌号未填写'
 					})
-				}else if(this.recycle == "") {
-					MessageBox({
-						title: '提示',
-						message: '回收物品未填写'
+				} else if(this.recycle == "") {
+					Toast({
+						message: '回收物品未填写',
 					})
-				}else{
-					console.log("哎哟！不错哦")
+				} else {
+					//等待做跳转
 				}
 			}
 		},

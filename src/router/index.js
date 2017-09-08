@@ -13,6 +13,8 @@ import ditu from '@/pages/account/ditu'
 import search from '@/pages/account/search'
 import outbox from '@/pages/recyclebin/outbox'
 import entrecyle from '@/pages/enterprisestorecyle/entrecyle'
+import secproducts from '@/pages/secondhandproducts/secproducts'
+import particulars from '@/pages/secondhandproducts/particulars'
 
 Vue.use(Router)
 
@@ -62,6 +64,14 @@ export default new Router({
 				{
 					path:'/entrecyle',
 					component:entrecyle,
+				},
+				{
+					path:'/secproducts',
+					component:secproducts,
+				},
+				{
+					path:'/particulars',
+					component:particulars,
 				}
 			]
     }
